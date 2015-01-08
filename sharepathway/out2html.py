@@ -154,7 +154,7 @@ def out2html(*args, **kwargs):
             fet = stats.fisher_exact([[count,gnum-count],[pn,30000-pn]])[1]
             # hyperlink to mapid
             strsamples = ', '.join([str(int(i)) for i in samples])
-            outfile.write('''<tr><td><a href="%s">%s</a></td><td>%s</td><td>%s</td><td>%s</td><td>%.2f</td><td>%.2E</td><td>%.2E</td><td>%.2E</td><td>%s</td></tr>''' % (
+            outfile.write('''<tr><td><a href="%s">%s</a></td><td>%s</td><td>%s</td><td>%s</td><td>%.2f</td><td>%g</td><td>%g</td><td>%g</td><td>%s</td></tr>''' % (
                 mapid, pwname, genes, pn,count, ratio, pvalue, ease, fet, strsamples))
             fs.write('''%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n''' %(pwname, genes, pn,count, ratio, pvalue, ease, fet, strsamples))
         counter += 1
